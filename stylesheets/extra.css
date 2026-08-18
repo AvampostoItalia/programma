@@ -1,0 +1,83 @@
+/* Aggiungi una striscia tricolore in cima all'header */
+.md-header::before {
+    content: "";
+    display: block;
+    height: 10px; /* Puoi regolare lo spessore qui */
+    width: 100%;
+    background: linear-gradient(to right, 
+        #008C45 33.3%, 
+        #F4F5F0 33.3%, #F4F5F0 66.6%, 
+        #CD212A 66.6%);
+}
+
+/* Personalizzazione della Announcement Bar */
+.md-banner {
+    
+    background: linear-gradient(to right, 
+        #008C45 33.3%, 
+        #F4F5F0 33.3%, #F4F5F0 66.6%, 
+        #CD212A 66.6%);
+
+    color: #080808; /* Colore del testo (scuro per contrastare con il bianco centrale) */
+    text-align: center;
+    font-weight: 500;
+    padding: 3px 0; 
+}
+
+/* Stile per i link all'interno della barra */
+.md-banner a {
+    color: #080808;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Nasconde il link e crea una linea orizzontale per voci di menu chiamate "---" */
+/* Mira all'elemento di navigazione che contiene il testo "---" */
+.md-nav__link[href*="separator"] {
+    display: none; /* Nasconde il link */
+}
+
+.md-nav__item:has(> a[href*="separator"]) {
+    border-top: 1px solid var(--md-default-fg-color--lightest);
+    margin: 10px 0;
+}
+
+
+/* JUSTIFY */
+.md-typeset {
+    text-align: justify;
+    hyphens: auto; /* Aiuta a spezzare le parole correttamente */
+    word-break: break-word; /* Forza l'andata a capo se una parola è troppo lunga */
+}
+
+/* Forza l'allineamento a sinistra per titoli e altri elementi problematici */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6,
+.md-typeset li,
+.md-typeset blockquote {
+    text-align: left;
+    hyphens: none;
+}
+
+/* Ingrandisce i diagrammi Mermaid e abilita lo scroll orizzontale se necessario */
+.mermaid svg {
+  font-size: 16px !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Espande i diagrammi Mermaid a tutta larghezza e aumenta la leggibilità */
+.mermaid {
+  text-align: center;
+  width: 100%;
+}
+
+.mermaid svg {
+  max-width: 100% !important;
+  height: auto !important;
+  font-size: 16px !important;
+}
